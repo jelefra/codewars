@@ -118,6 +118,7 @@ const blocks = require("./katas/117-6-return-string-as-sorted-blocks");
 const stockList = require("./katas/118-6-help-the-bookseller");
 const strongestEven = require("./katas/119-6-strongest-even-number-in-an-interval");
 const thirt = require("./katas/120-6-a-rule-of-divisibility-by-13");
+const count = require("./katas/121-6-count-characters-in-your-string");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1663,5 +1664,10 @@ describe("Test all kata solutions", () => {
     expect(thirt(5634)).toEqual(57);
     expect(thirt(1111111111)).toEqual(71);
     expect(thirt(987654321)).toEqual(30);
+  });
+
+  it("121", () => {
+    expect(count("aba")).toEqual({ a: 2, b: 1 });
+    expect(count("")).toEqual({});
   });
 });
