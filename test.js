@@ -119,6 +119,7 @@ const stockList = require("./katas/118-6-help-the-bookseller");
 const strongestEven = require("./katas/119-6-strongest-even-number-in-an-interval");
 const thirt = require("./katas/120-6-a-rule-of-divisibility-by-13");
 const count = require("./katas/121-6-count-characters-in-your-string");
+const streetFighterSelection = require("./katas/122-6-street-fighter-2-character-selection");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1669,5 +1670,71 @@ describe("Test all kata solutions", () => {
   it("121", () => {
     expect(count("aba")).toEqual({ a: 2, b: 1 });
     expect(count("")).toEqual({});
+  });
+
+  it("122", () => {
+    const fighters = [
+      ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+      ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
+    ];
+
+    expect(streetFighterSelection(fighters, [0, 0], ["right"])).toEqual([
+      "E.Honda"
+    ]);
+
+    expect(
+      streetFighterSelection(fighters, [0, 0], ["right", "right"])
+    ).toEqual(["E.Honda", "Blanka"]);
+
+    expect(
+      streetFighterSelection(
+        fighters,
+        [0, 0],
+        ["right", "right", "right", "right", "right", "right"]
+      )
+    ).toEqual(["E.Honda", "Blanka", "Guile", "Balrog", "Vega", "Ryu"]);
+
+    expect(streetFighterSelection(fighters, [0, 0], ["left"])).toEqual([
+      "Vega"
+    ]);
+
+    expect(streetFighterSelection(fighters, [0, 0], ["left", "left"])).toEqual([
+      "Vega",
+      "Balrog"
+    ]);
+
+    expect(
+      streetFighterSelection(
+        fighters,
+        [0, 0],
+        ["left", "left", "left", "left", "left", "left", "left"]
+      )
+    ).toEqual(["Vega", "Balrog", "Guile", "Blanka", "E.Honda", "Ryu", "Vega"]);
+
+    expect(streetFighterSelection(fighters, [0, 0], ["down"])).toEqual(["Ken"]);
+
+    expect(streetFighterSelection(fighters, [0, 0], ["down", "down"])).toEqual([
+      "Ken",
+      "Ken"
+    ]);
+
+    expect(
+      streetFighterSelection(fighters, [0, 0], ["down", "down", "up"])
+    ).toEqual(["Ken", "Ken", "Ryu"]);
+
+    expect(streetFighterSelection(fighters, [0, 0], ["up"])).toEqual(["Ryu"]);
+
+    expect(streetFighterSelection(fighters, [0, 0], ["up", "up"])).toEqual([
+      "Ryu",
+      "Ryu"
+    ]);
+
+    expect(
+      streetFighterSelection(
+        fighters,
+        [0, 0],
+        ["up", "left", "right", "left", "left"]
+      )
+    ).toEqual(["Ryu", "Vega", "Ryu", "Vega", "Balrog"]);
   });
 });
