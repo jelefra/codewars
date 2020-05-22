@@ -120,6 +120,7 @@ const strongestEven = require("./katas/119-6-strongest-even-number-in-an-interva
 const thirt = require("./katas/120-6-a-rule-of-divisibility-by-13");
 const count = require("./katas/121-6-count-characters-in-your-string");
 const streetFighterSelection = require("./katas/122-6-street-fighter-2-character-selection");
+const foldArray = require('./katas/123-6-fold-an-array');
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1736,5 +1737,14 @@ describe("Test all kata solutions", () => {
         ["up", "left", "right", "left", "left"]
       )
     ).toEqual(["Ryu", "Vega", "Ryu", "Vega", "Balrog"]);
+  });
+
+  it("123", () => {
+    expect(foldArray([1, 2, 3, 4], 1)).toEqual([5, 5]);
+    expect(foldArray([1, 2, 3, 4, 5, 6], 1)).toEqual([7, 7, 7]);
+    expect(foldArray([1, 2, 3, 4, 5], 1)).toEqual([6, 6, 3]);
+    expect(foldArray([1, 2, 3, 4, 5], 2)).toEqual([9, 6]);
+    expect(foldArray([1, 2, 3, 4, 5], 3)).toEqual([15]);
+    expect(foldArray([-9, 9, -8, 8, 66, 23], 1)).toEqual([14, 75, 0]);
   });
 });
