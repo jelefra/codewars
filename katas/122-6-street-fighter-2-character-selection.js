@@ -1,5 +1,5 @@
 /*
-https://www.codewars.com/kata/
+https://www.codewars.com/kata/street-fighter-2-character-selection/train/javascript
 
 Some of you might remember spending afternoons playing Street Fighter 2 in some Arcade back in the 90s or emulating it nowadays with the numerous emulators for retro consoles.
 
