@@ -120,7 +120,7 @@ const strongestEven = require("./katas/119-6-strongest-even-number-in-an-interva
 const thirt = require("./katas/120-6-a-rule-of-divisibility-by-13");
 const count = require("./katas/121-6-count-characters-in-your-string");
 const streetFighterSelection = require("./katas/122-6-street-fighter-2-character-selection");
-const foldArray = require('./katas/123-6-fold-an-array');
+const foldArray = require("./katas/123-6-fold-an-array");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
