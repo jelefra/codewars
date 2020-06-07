@@ -121,6 +121,7 @@ const thirt = require("./katas/120-6-a-rule-of-divisibility-by-13");
 const count = require("./katas/121-6-count-characters-in-your-string");
 const streetFighterSelection = require("./katas/122-6-street-fighter-2-character-selection");
 const foldArray = require("./katas/123-6-fold-an-array");
+const twoSum = require("./katas/124-6-two-sum");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1746,5 +1747,11 @@ describe("Test all kata solutions", () => {
     expect(foldArray([1, 2, 3, 4, 5], 2)).toEqual([9, 6]);
     expect(foldArray([1, 2, 3, 4, 5], 3)).toEqual([15]);
     expect(foldArray([-9, 9, -8, 8, 66, 23], 1)).toEqual([14, 75, 0]);
+  });
+
+  it("124", () => {
+    expect(twoSum([1, 2, 3], 4)).toEqual([0, 2]);
+    expect(twoSum([1234, 5678, 9012], 14690)).toEqual([1, 2]);
+    expect(twoSum([2, 2, 3], 4)).toEqual([0, 1]);
   });
 });
