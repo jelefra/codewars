@@ -122,6 +122,7 @@ const count = require("./katas/121-6-count-characters-in-your-string");
 const streetFighterSelection = require("./katas/122-6-street-fighter-2-character-selection");
 const foldArray = require("./katas/123-6-fold-an-array");
 const twoSum = require("./katas/124-6-two-sum");
+const playPass = require("./katas/125-6-playing-with-passphrases");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1753,5 +1754,16 @@ describe("Test all kata solutions", () => {
     expect(twoSum([1, 2, 3], 4)).toEqual([0, 2]);
     expect(twoSum([1234, 5678, 9012], 14690)).toEqual([1, 2]);
     expect(twoSum([2, 2, 3], 4)).toEqual([0, 1]);
+  });
+
+  it("125", () => {
+    expect(playPass("A", 1)).toEqual("B");
+    expect(playPass("A", 26)).toEqual("A");
+    expect(playPass("Z", 1)).toEqual("A");
+    expect(playPass("1", 1)).toEqual("8");
+    expect(playPass("5", 1)).toEqual("4");
+    expect(playPass("A1", 1)).toEqual("8B");
+    expect(playPass("AZ1", 1)).toEqual("8aB");
+    expect(playPass("I LOVE YOU!!!", 1)).toEqual("!!!vPz fWpM J");
   });
 });
