@@ -39,7 +39,7 @@
     "no-multi-assign": "warn",
     "no-nested-ternary": "warn",
     "no-param-reassign": "warn",
-    "no-plusplus": "warn",
+    "no-plusplus": "off",
     "no-redeclare": "warn",
     "no-restricted-properties": "warn",
     "no-restricted-syntax": "warn",
