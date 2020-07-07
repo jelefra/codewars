@@ -123,6 +123,7 @@ const streetFighterSelection = require("./katas/122-6-street-fighter-2-character
 const foldArray = require("./katas/123-6-fold-an-array");
 const twoSum = require("./katas/124-6-two-sum");
 const playPass = require("./katas/125-6-playing-with-passphrases");
+const hamming = require("./katas/126-4-hamming-numbers");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1765,5 +1766,27 @@ describe("Test all kata solutions", () => {
     expect(playPass("A1", 1)).toEqual("8B");
     expect(playPass("AZ1", 1)).toEqual("8aB");
     expect(playPass("I LOVE YOU!!!", 1)).toEqual("!!!vPz fWpM J");
+  });
+
+  it("126", () => {
+    expect(hamming(1)).toEqual(1);
+    expect(hamming(2)).toEqual(2);
+    expect(hamming(3)).toEqual(3);
+    expect(hamming(4)).toEqual(4);
+    expect(hamming(5)).toEqual(5);
+    expect(hamming(6)).toEqual(6);
+    expect(hamming(7)).toEqual(8);
+    expect(hamming(8)).toEqual(9);
+    expect(hamming(9)).toEqual(10);
+    expect(hamming(10)).toEqual(12);
+    expect(hamming(11)).toEqual(15);
+    expect(hamming(12)).toEqual(16);
+    expect(hamming(13)).toEqual(18);
+    expect(hamming(14)).toEqual(20);
+    expect(hamming(15)).toEqual(24);
+    expect(hamming(16)).toEqual(25);
+    expect(hamming(17)).toEqual(27);
+    expect(hamming(18)).toEqual(30);
+    expect(hamming(19)).toEqual(32);
   });
 });
