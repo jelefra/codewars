@@ -1,0 +1,65 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "plugins": [
+    "jest"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "array-callback-return": "warn",
+    "block-scoped-var": "warn",
+    "camelcase": "warn",
+    "consistent-return": "warn",
+    "default-case": "warn",
+    "eqeqeq": "warn",
+    "guard-for-in": "warn",
+    "import/no-extraneous-dependencies": "off",
+    "no-bitwise": "warn",
+    "no-cond-assign": "warn",
+    "no-continue": "warn",
+    "no-eval": "warn",
+    "no-extend-native": "warn",
+    "no-fallthrough": "warn",
+    "no-lonely-if": "warn",
+    "no-loop-func": "warn",
+    "no-multi-assign": "warn",
+    "no-nested-ternary": "warn",
+    "no-param-reassign": "warn",
+    "no-plusplus": "off",
+    "no-redeclare": "warn",
+    "no-restricted-properties": "warn",
+    "no-restricted-syntax": "warn",
+    "no-return-assign": "warn",
+    "no-sequences": "warn",
+    "no-shadow": "warn",
+    "no-undef": "warn",
+    "no-unused-expressions": "warn",
+    "no-unused-vars": "off",
+    "no-use-before-define": "warn",
+    "no-useless-concat": "warn",
+    "no-useless-escape": "warn",
+    "no-var": "warn",
+    "object-shorthand": "warn",
+    "one-var": "warn",
+    "prefer-destructuring": "warn",
+    "prefer-rest-params": "warn",
+    "prefer-template": "warn",
+    "prefer-spread": "warn",
+    "radix": "warn",
+    "vars-on-top": "warn"
+  }
+}
