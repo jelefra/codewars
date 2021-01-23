@@ -127,6 +127,7 @@ const hamming = require("./katas/126-4-hamming-numbers");
 const quarterOf = require("./katas/127-8-quarter-year");
 const breakCamelCase = require("./katas/128-6-break-camel-case");
 const nbMonths = require("./katas/129-6-buying-a-car");
+const partsSums = require("./katas/130-6-sum-of-parts");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1869,5 +1870,39 @@ describe("Test all kata solutions", () => {
     expect(nbMonths(8000, 8000, 1000, 1.5)).toEqual([0, 0]);
     expect(nbMonths(2000, 3000, 1000, 1.5)).toEqual([1, 15]);
     expect(nbMonths(2000, 8000, 1000, 1.5)).toEqual([6, 766]);
+  });
+
+  it("130", () => {
+    expect(partsSums([1, 2, 3])).toEqual([6, 5, 3, 0]);
+    expect(partsSums([0, 1, 3, 6, 10])).toEqual([20, 20, 19, 16, 10, 0]);
+    expect(partsSums([1, 2, 3, 4, 5, 6])).toEqual([21, 20, 18, 15, 11, 6, 0]);
+    expect(
+      partsSums([
+        744125,
+        935,
+        407,
+        454,
+        430,
+        90,
+        144,
+        6710213,
+        889,
+        810,
+        2579358
+      ])
+    ).toEqual([
+      10037855,
+      9293730,
+      9292795,
+      9292388,
+      9291934,
+      9291504,
+      9291414,
+      9291270,
+      2581057,
+      2580168,
+      2579358,
+      0
+    ]);
   });
 });
