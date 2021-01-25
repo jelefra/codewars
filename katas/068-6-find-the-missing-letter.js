@@ -9,7 +9,6 @@ The array will always contain letters in only one case.
 Example:
 ['a','b','c','d','f'] -> 'e'
 ['O','Q','R','S'] -> 'P'
-(Use the English alphabet with 26 letters!)
 */
 
 // Submission
@@ -21,9 +20,26 @@ function findMissingLetter(array) {
   }
 }
 
+// Inspiration
+const findMissingLetter2 = array => {
+  const first = array[0].charCodeAt(0);
+  for (let i = 1; i < array.length; i++) {
+    if (first + i !== array[i].charCodeAt(0)) {
+      return String.fromCharCode(first + i);
+    }
+  }
+  throw new Error("Invalid input");
+};
+
+const findMissingLetter3 = array => {
+  let i = array[0].charCodeAt(0);
+  array.map(x => (x.charCodeAt(0) === i ? i++ : i));
+  return String.fromCharCode(i);
+};
+
 // Practicing
-function findMissingLetterZ(words) {
+const findMissingLetterZ = array => {
   return 1;
-}
+};
 
 module.exports = findMissingLetter;

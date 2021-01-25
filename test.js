@@ -993,7 +993,14 @@ describe("Test all kata solutions", () => {
 
   it("069", () => {
     expect(validBraces("()")).toEqual(true);
+    expect(validBraces("()()")).toEqual(true);
+    expect(validBraces("()()[]")).toEqual(true);
     expect(validBraces("[(])")).toEqual(false);
+    expect(validBraces("(){}[]")).toEqual(true);
+    expect(validBraces("([{}])")).toEqual(true);
+    expect(validBraces("(}")).toEqual(false);
+    expect(validBraces("[(])")).toEqual(false);
+    expect(validBraces("[({})](]")).toEqual(false);
   });
 
   it("070", () => {

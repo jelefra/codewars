@@ -3,11 +3,9 @@ https://www.codewars.com/kata/valid-braces/train/javascript
 
 Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
 
-This Kata is similar to the Valid Parentheses Kata, but introduces new characters: brackets [], and curly braces {}. Thanks to @arnedag for the idea!
-
 All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.
 
-What is considered Valid?
+What is considered valid?
 A string of braces is considered valid if all braces are matched with the correct braces.
 
 Examples
@@ -36,7 +34,7 @@ function validBraces(braces) {
 }
 
 // Inspiration
-function validBraces2(braces) {
+const validBraces2 = braces => {
   const matches = { "(": ")", "{": "}", "[": "]" };
   const stack = [];
   let currentChar;
@@ -55,32 +53,18 @@ function validBraces2(braces) {
   }
 
   return stack.length === 0; // any unclosed braces left?
-}
+};
 
-function validBraces3(braces) {
+const validBraces3 = braces => {
   while (/\(\)|\[\]|\{\}/g.test(braces)) {
     braces = braces.replace(/\(\)|\[\]|\{\}/g, "");
   }
   return !braces.length;
-}
-
-function validBraces4(braces) {
-  while (
-    braces.indexOf("{}") != -1 ||
-    braces.indexOf("()") != -1 ||
-    braces.indexOf("[]") != -1
-  ) {
-    braces = braces
-      .replace("{}", "")
-      .replace("()", "")
-      .replace("[]", "");
-  }
-  return braces.length == 0;
-}
+};
 
 // Practicing
-function validBracesZ(words) {
+const validBracesZ = braces => {
   return 1;
-}
+};
 
 module.exports = validBraces;
