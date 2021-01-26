@@ -17,14 +17,13 @@ More generally given parameters:
 
 p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass)
 
-the function nb_year should return n number of entire years needed to get a population greater or equal to p.
+the function nbNear should return the number n of entire years needed to get a population greater or equal to p.
 
 aug is an integer, percent a positive or null number, p0 and p are positive integers (> 0)
 
 Examples:
-nb_year(1500, 5, 100, 5000) -> 15
+nbYear(1500, 5, 100, 5000) -> 15
 nb_year(1500000, 2.5, 10000, 2000000) -> 10
-Note: Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
 */
 
 // Submission
@@ -40,24 +39,24 @@ function nbYear(p0, percent, aug, p) {
 }
 
 // Inspiration
-function nbYear2(p0, percent, aug, p) {
-  let y = 0;
-  for (y; p0 < p; y++) p0 += (p0 * percent) / 100 + aug;
-  return y;
-}
-
-function nbYear3(p0, percent, aug, p) {
+const nbYear2 = (p0, percent, aug, p) => {
   let count = 0;
   while (p0 < p) {
     p0 += (p0 * percent) / 100 + aug;
     count++;
   }
   return count;
-}
+};
+
+const nbYear3 = (p0, percent, aug, p) => {
+  let y = 0;
+  for (y; p0 < p; y++) p0 += (p0 * percent) / 100 + aug;
+  return y;
+};
 
 // Practicing
-function nbYearZ(p0, percent, aug, p) {
+const nbYearZ = (p0, percent, aug, p) => {
   return 1;
-}
+};
 
 module.exports = nbYear;

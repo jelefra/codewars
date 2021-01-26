@@ -1004,6 +1004,11 @@ describe("Test all kata solutions", () => {
   });
 
   it("070", () => {
+    expect(comp(null, [1])).toEqual(false);
+    expect(comp([1], null)).toEqual(false);
+    expect(comp(null, null)).toEqual(false);
+    expect(comp([19, 11], [361, 121])).toEqual(true);
+    expect(comp([], [])).toEqual(true);
     expect(
       comp(
         [121, 144, 19, 161, 19, 144, 19, 11],
@@ -1019,6 +1024,7 @@ describe("Test all kata solutions", () => {
         ]
       )
     ).toEqual(true);
+    expect(comp([1], [2])).toEqual(false);
   });
 
   it("071", () => {
@@ -1026,12 +1032,16 @@ describe("Test all kata solutions", () => {
   });
 
   it("072", () => {
+    expect(disemvowel("This website is for losers lol!")).toEqual(
+      "Ths wbst s fr lsrs ll!"
+    );
     expect(disemvowel("This website is for losers LOL!")).toEqual(
       "Ths wbst s fr lsrs LL!"
     );
   });
 
   it("073", () => {
+    expect(isSquare(-1)).toEqual(false);
     expect(isSquare(0)).toEqual(true);
     expect(isSquare(3)).toEqual(false);
     expect(isSquare(4)).toEqual(true);
@@ -1083,6 +1093,12 @@ describe("Test all kata solutions", () => {
   });
 
   it("079", () => {
+    expect(list([])).toEqual("");
+    expect(list([{ name: "Bart" }])).toEqual("Bart");
+    expect(list([{ name: "Bart" }, { name: "Lisa" }])).toEqual("Bart & Lisa");
+    expect(
+      list([{ name: "Bart" }, { name: "Lisa" }, { name: "Maggie" }])
+    ).toEqual("Bart, Lisa & Maggie");
     expect(
       list([
         { name: "Bart" },
@@ -1092,12 +1108,6 @@ describe("Test all kata solutions", () => {
         { name: "Marge" }
       ])
     ).toEqual("Bart, Lisa, Maggie, Homer & Marge");
-    expect(
-      list([{ name: "Bart" }, { name: "Lisa" }, { name: "Maggie" }])
-    ).toEqual("Bart, Lisa & Maggie");
-    expect(list([{ name: "Bart" }, { name: "Lisa" }])).toEqual("Bart & Lisa");
-    expect(list([{ name: "Bart" }])).toEqual("Bart");
-    expect(list([])).toEqual("");
   });
 
   it("080", () => {

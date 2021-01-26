@@ -1,7 +1,7 @@
 /*
 https://www.codewars.com/kata/square-every-digit/train/javascript
 
-Welcome. In this kata, you are asked to square every digit of a number.
+Square every digit of a number.
 
 For example, if we run 9119 through the function, 811181 will come out, because 9^2 is 81 and 1^2 is 1.
 
@@ -20,37 +20,36 @@ function squareDigits(num) {
   );
 }
 
-function squareDigits2(num) {
+// Inspiration
+const squareDigits2 = num => {
   return Number(
     `${num}`
       .split("")
-      .map(function(val) {
-        return val * val;
-      })
+      .map(val => val * val)
       .join("")
   );
-}
+};
 
-function squareDigits3(num) {
+const squareDigits3 = num => {
   return Number(
     `${num}`
       .split("")
       .map(x => x * x)
       .join("")
   );
-}
+};
 
-function squareDigits4(num) {
+const squareDigits4 = num => {
   return +num
     .toString()
     .split("")
     .map(i => i * i)
     .join("");
-}
+};
 
 // Practicing
-function squareDigitsZ(words) {
+const squareDigitsZ = num => {
   return 1;
-}
+};
 
 module.exports = squareDigits;

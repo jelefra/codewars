@@ -22,13 +22,13 @@ function disemvowel(str) {
 }
 
 // Inspiration
-function disemvowel2(str) {
+const disemvowel2 = str => {
   return str.replace(/[aeiou]/gi, "");
-}
+};
 
 // Practicing
-function disemvowelZ(words) {
+const disemvowelZ = str => {
   return 1;
-}
+};
 
 module.exports = disemvowel;

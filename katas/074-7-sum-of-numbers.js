@@ -38,9 +38,13 @@ const getSum2 = (a, b) => {
   return ((max - min + 1) * (min + max)) / 2;
 };
 
+const getSum3 = (a, b) => {
+  return ((Math.abs(a - b) + 1) * (a + b)) / 2;
+};
+
 // Practicing
-function getSumZ(a, b) {
+const getSumZ = (x, y) => {
   return 1;
-}
+};
 
 module.exports = getSum;

@@ -31,8 +31,14 @@ function list(names) {
 }
 
 // Inspiration
-function list2(names) {
-  return names.reduce(function(prev, current, index, array) {
+const list2 = names => {
+  names = names.map(p => p.name);
+  const last = names.pop();
+  return names.length ? `${names.join(", ")} & ${last}` : last || "";
+};
+
+const list3 = names => {
+  return names.reduce((prev, current, index, array) => {
     if (index === 0) {
       return current.name;
     }
@@ -41,17 +47,31 @@ function list2(names) {
     }
     return `${prev}, ${current.name}`;
   }, "");
-}
+};
 
-function list3(names) {
-  const xs = names.map(p => p.name);
-  const x = xs.pop();
-  return xs.length ? `${xs.join(", ")} & ${x}` : x || "";
-}
+const list4 = names => {
+  return names
+    .map(x => x.name)
+    .join(", ")
+    .replace(/(.*),(.*)$/, "$1 &$2");
+};
+
+const list5 = names => {
+  names = names.map(name => name.name);
+  const map = {
+    0: "",
+    1: `${names[0]}`,
+    2: `${names[0]} & ${names[1]}`,
+    3: `${names.slice(0, names.length - 2).join(", ")}, ${
+      names[names.length - 2]
+    } & ${names[names.length - 1]}`
+  };
+  return map[Math.min(names.length, 3)];
+};
 
 // Practicing
-function listZ() {
+const listZ = names => {
   return 1;
-}
+};
 
 module.exports = list;

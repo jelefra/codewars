@@ -24,17 +24,17 @@ function deleteNth(arr, n) {
 }
 
 // Inspiration
-function deleteNth2(arr, x) {
+const deleteNth2 = (arr, x) => {
   const cache = {};
-  return arr.filter(function(n) {
+  return arr.filter(n => {
     cache[n] = (cache[n] || 0) + 1;
     return cache[n] <= x;
   });
-}
+};
 
 // Practicing
-function deleteNthZ() {
+const deleteNthZ = (arr, x) => {
   return 1;
-}
+};
 
 module.exports = deleteNth;
