@@ -25,9 +25,11 @@ function findOdd(A) {
 const findOdd2 = a => {
   return a.find(item => a.filter(d => d === item).length % 2);
 };
+
 const findOdd3 = a => {
   return a.reduce((a, b) => a ^ b);
 };
+
 const findOdd4 = a => {
   const dict = {};
   a.forEach(digit => {

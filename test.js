@@ -1133,6 +1133,9 @@ describe("Test all kata solutions", () => {
     expect(solution(19)).toEqual("XIX");
     expect(solution(22)).toEqual("XXII");
     expect(solution(15)).toEqual("XV");
+    expect(solution(50)).toEqual("L");
+    expect(solution(100)).toEqual("C");
+    expect(solution(500)).toEqual("D");
     expect(solution(1000)).toEqual("M");
     expect(solution(1001)).toEqual("MI");
     expect(solution(1990)).toEqual("MCMXC");

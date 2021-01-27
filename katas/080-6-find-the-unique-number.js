@@ -19,12 +19,14 @@ function findUniq(arr) {
 }
 
 // Inspiration
-function findUniq2(arr) {
+const findUniq2 = arr => {
   arr.sort((a, b) => a - b);
-  return arr[0] == arr[1] ? arr.pop() : arr[0];
-}
+  return arr[0] === arr[1] ? arr.pop() : arr[0];
+};
 
 // Practicing
-function findUniqZ(arr) {}
+const findUniqZ = arr => {
+  return 1;
+};
 
 module.exports = findUniq;
