@@ -1,7 +1,7 @@
 /*
 https://www.codewars.com/kata/convert-string-to-camel-case/train/javascript
 
-Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized.
+Complete the function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized.
 
 Examples
 toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
@@ -24,31 +24,26 @@ function toCamelCase(str) {
 }
 
 // Inspiration
-function toCamelCase2(str) {
+const toCamelCase2 = str => {
   return str.replace(/[-_]\w/g, match => match.charAt(1).toUpperCase());
-}
+};
 
-function toCamelCase3(str) {
+const toCamelCase3 = str => {
   return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
-}
+};
 
-function toCamelCase4(str) {
+const toCamelCase4 = str => {
   return str
     .split(/-|_/g)
     .map(
       (w, i) => (i > 0 ? w.charAt(0).toUpperCase() : w.charAt(0)) + w.slice(1)
     )
     .join("");
-}
+};
 
 // Practicing
-function toCamelCaseZ(str) {
-  return str
-    .split(/-|_/g)
-    .map(
-      (w, i) => (i > 0 ? w.charAt(0).toUpperCase() : w.charAt(0)) + w.slice(1)
-    )
-    .join("");
-}
+const toCamelCaseZ = str => {
+  return 1;
+};
 
 module.exports = toCamelCase;

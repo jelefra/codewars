@@ -1152,6 +1152,9 @@ describe("Test all kata solutions", () => {
 
   it("083", () => {
     expect(
+      inArray(["xyz", "live", "tree"], ["live", "sharp", "tree"])
+    ).toEqual(["live", "tree"]);
+    expect(
       inArray(
         ["xyz", "live", "strong"],
         ["lively", "alive", "harp", "sharp", "armstrong"]
