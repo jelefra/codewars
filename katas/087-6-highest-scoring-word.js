@@ -14,7 +14,7 @@ All letters will be lowercase and all inputs will be valid.
 
 // Submission
 function high(sentence) {
-  let highestScore = 0; // can also do  let highestScore = 0, highestScoringWord;
+  let highestScore = 0; // can also do let highestScore = 0, highestScoringWord;
   let highestScoringWord = "";
   sentence.split(" ").forEach(word => {
     const wordScore = word.split("").reduce((total, char) => {
@@ -29,14 +29,14 @@ function high(sentence) {
 }
 
 // Inspiration
-function high2(s) {
+const high2 = s => {
   const as = s
     .split(" ")
     .map(s => [...s].reduce((a, b) => a + b.charCodeAt(0) - 96, 0));
   return s.split(" ")[as.indexOf(Math.max(...as))];
-}
+};
 
-function high3(x) {
+const high3 = x => {
   const arr = x.split(" ");
   const str = "abcdefghijklmnopqrstuvwxyz";
   const newArr = arr.map(word => {
@@ -47,11 +47,11 @@ function high3(x) {
     return sum;
   });
   return arr[newArr.indexOf(Math.max(...newArr))];
-}
+};
 
 // Practicing
-function highZ() {
+const highZ = sentence => {
   return 1;
-}
+};
 
 module.exports = high;

@@ -1,11 +1,12 @@
 /*
 https://www.codewars.com/kata/write-number-in-expanded-form/train/javascript
 
-You will be given a number and you will need to return it as a string in Expanded Form. For example:
+Given a number, return it as a string in expanded form. For example:
 
 expandedForm(12); // Should return '10 + 2'
 expandedForm(42); // Should return '40 + 2'
 expandedForm(70304); // Should return '70000 + 300 + 4'
+
 NOTE: All numbers will be whole numbers greater than 0.
 */
 
@@ -41,22 +42,22 @@ const expandedForm3 = num => {
     .join(" + ");
 };
 
-function expandedForm4(num) {
+const expandedForm4 = num => {
   return [...`${num}`]
     .map((d, i, a) => d + "0".repeat(a.length - 1 - i))
     .filter(a => a[0] !== "0")
     .join(" + ");
-}
+};
 
-function expandedForm5(num) {
+const expandedForm5 = num => {
   const arr = [];
   for (let e = 10, d = num % e; num; num -= d, e *= 10, d = num % e) {
     if (d) arr.unshift(d);
   }
   return arr.join(" + ");
-}
+};
 
-function expandedForm6(n) {
+const expandedForm6 = n => {
   n.toString()
     .split("")
     .reverse()
@@ -64,11 +65,11 @@ function expandedForm6(n) {
     .filter(a => a > 0)
     .reverse()
     .join(" + ");
-}
+};
 
 // Practicing
-function expandedFormZ() {
+const expandedFormZ = num => {
   return 1;
-}
+};
 
 module.exports = expandedForm;

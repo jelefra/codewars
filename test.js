@@ -1180,6 +1180,7 @@ describe("Test all kata solutions", () => {
     expect(countSmileys([":D", ":~)", ";~D", ":)"])).toEqual(4);
     expect(countSmileys([":)", ":(", ":D", ":O", ":;"])).toEqual(2);
     expect(countSmileys([";]", ":[", ";*", ":$", ";-D"])).toEqual(1);
+    // expect(countSmileys(["::D"])).toEqual(0);
   });
 
   it("085", () => {
