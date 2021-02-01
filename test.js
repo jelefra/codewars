@@ -128,6 +128,7 @@ const quarterOf = require("./katas/127-8-quarter-year");
 const breakCamelCase = require("./katas/128-6-break-camel-case");
 const nbMonths = require("./katas/129-6-buying-a-car");
 const partsSums = require("./katas/130-6-sum-of-parts");
+const meeting = require("./katas/131-6-meeting");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1927,5 +1928,36 @@ describe("Test all kata solutions", () => {
       2579358,
       0
     ]);
+  });
+
+  it("131", () => {
+    expect(
+      meeting(
+        "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+      )
+    ).toEqual(
+      "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
+    );
+    expect(
+      meeting(
+        "Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn"
+      )
+    ).toEqual(
+      "(ARNO, ANN)(BELL, JOHN)(CORNWELL, ALEX)(DORNY, ABBA)(KERN, LEWIS)(KORN, ALEX)(META, GRACE)(SCHWARZ, VICTORIA)(STAN, MADISON)(STAN, MEGAN)(WAHL, ALEXIS)"
+    );
+    expect(
+      meeting(
+        "John:Gates;Michael:Wahl;Megan:Bell;Paul:Dorries;James:Dorny;Lewis:Steve;Alex:Meta;Elizabeth:Russel;Anna:Korn;Ann:Kern;Amber:Cornwell"
+      )
+    ).toEqual(
+      "(BELL, MEGAN)(CORNWELL, AMBER)(DORNY, JAMES)(DORRIES, PAUL)(GATES, JOHN)(KERN, ANN)(KORN, ANNA)(META, ALEX)(RUSSEL, ELIZABETH)(STEVE, LEWIS)(WAHL, MICHAEL)"
+    );
+    expect(
+      meeting(
+        "Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern"
+      )
+    ).toEqual(
+      "(ARNO, ALEX)(ARNO, HALEY)(BELL, SARAH)(CORNWELL, ALISSA)(DORNY, PAUL)(DORRIES, ANDREW)(KERN, ANN)(KERN, MADISON)"
+    );
   });
 });
