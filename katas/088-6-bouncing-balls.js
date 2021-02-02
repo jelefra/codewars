@@ -16,13 +16,10 @@ Float parameter "window" must be less than h.
 If all three conditions above are fulfilled, return a positive integer, otherwise return -1.
 
 Note:
-The ball can only be seen if the height of the rebounding ball is stricty greater than the window parameter.
+The ball can only be seen if the height of the rebounding ball is strictly greater than the window parameter.
 
 Example:
 - h = 3, bounce = 0.66, window = 1.5, result is 3
-- h = 3, bounce = 1, window = 1.5, result is -1 
-
-(Condition 2) not fulfilled).
 */
 
 // Submission
@@ -42,7 +39,7 @@ function bouncingBall(h, bounce, window) {
 }
 
 // Inspiration
-function bouncingBall2(h, bounce, window) {
+const bouncingBall2 = (h, bounce, window) => {
   let rebounds = -1;
   if (bounce > 0 && bounce < 1 && h > 0 && window > 0) {
     while (h > window) {
@@ -50,22 +47,35 @@ function bouncingBall2(h, bounce, window) {
     }
   }
   return rebounds;
-}
+};
 
-function bouncingBall3(h, b, w) {
-  if (h <= w || b >= 1 || h < 0) {
+const bouncingBall3 = (h, bounce, window) => {
+  if (h < 0 || bounce < 0 || bounce >= 1 || window >= h) {
     return -1;
   }
-  const r = Math.floor(Math.log(w / h) / Math.log(b)) * 2 + 1;
+
+  let rebounds = 1;
+  while (bounce * h > window) {
+    rebounds += 2;
+    h *= bounce;
+  }
+  return rebounds;
+};
+
+const bouncingBall4 = (h, bounce, window) => {
+  if (h <= window || bounce >= 1 || h < 0) {
+    return -1;
+  }
+  const r = Math.floor(Math.log(window / h) / Math.log(bounce)) * 2 + 1;
   if (Number.isNaN(r)) {
     return -1;
   }
   return r;
-}
+};
 
 // Practicing
-function bouncingBallZ() {
+const bouncingBallZ = (h, bounce, window) => {
   return 1;
-}
+};
 
-module.exports = bouncingBall;
+module.exports = bouncingBallZ;

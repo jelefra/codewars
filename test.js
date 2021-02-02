@@ -1202,6 +1202,9 @@ describe("Test all kata solutions", () => {
 
   it("088", () => {
     expect(bouncingBall(3.0, 0.66, 1.5)).toEqual(3);
+    expect(bouncingBall(3.0, -0.5, 1.5)).toEqual(-1);
+    expect(bouncingBall(3.0, 0.66, 3)).toEqual(-1);
+    expect(bouncingBall(3.0, 1, 1.5)).toEqual(-1);
     expect(bouncingBall(30.0, 0.66, 1.5)).toEqual(15);
   });
 

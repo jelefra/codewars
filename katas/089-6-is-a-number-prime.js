@@ -6,9 +6,9 @@ Define a function that takes an integer argument and returns logical value true 
 Per Wikipedia, a prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
 
 Example
-is_prime(1)  false
-is_prime(2)  true
-is_prime(-1) false
+isPrime(1)    false
+isPrime(2)    true
+isPrime(-1)   false
 
 Assumptions
 You can assume you will be given an integer input.
@@ -41,20 +41,31 @@ function isPrime(num) {
 }
 
 // Inspiration
-function isPrime2(n) {
+const isPrime2 = num => {
+  if (num < 2) return false;
+  const limit = Math.sqrt(num);
+  for (let i = 2; i <= limit; ++i) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const isPrime3 = n => {
   return (
-    n == 2 ||
+    n === 2 ||
     (n > 1 &&
-      (n & 1) == 1 &&
+      (n & 1) === 1 &&
       Array.from(Array(~~(n ** 0.5) >> 1).keys()).filter(
-        p => n % (2 * p + 3) == 0
-      ).length == 0)
+        p => n % (2 * p + 3) === 0
+      ).length === 0)
   );
-}
+};
 
 // Practicing
-function isPrimeZ() {
+const isPrimeZ = num => {
   return 1;
-}
+};
 
 module.exports = isPrime;
