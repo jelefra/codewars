@@ -2,8 +2,10 @@
 https://www.codewars.com/kata/rectangle-into-squares/train/javascript
 
 The drawing below gives an idea of how to cut a given "true" rectangle into squares ("true" rectangle meaning that the two dimensions are different).
-
-(image missing)
+ _________
+|     |   |
+|     |___|
+|_____|_|_|
 
 Can you translate this drawing into an algorithm?
 
@@ -17,10 +19,6 @@ You will return an array with the size of each of the squares.
 
 Your result and the reference test solution are compared by strings.
 
-Notes:
-lng == wdth as a starting case would be an entirely different problem and the drawing is planned to be interpreted with lng != wdth.
-
-When the initial parameters are so that lng == wdth, the solution [lng] would be the most obvious but not in the spirit of this kata so, in that case, return null
 */
 
 // Submission
@@ -55,19 +53,19 @@ function sqInRect2(length, width) {
 }
 
 // Inspiration
-function sqInRect3(a, b, initial = true) {
+const sqInRect3 = (a, b, initial = true) => {
   if (a === b) {
     return initial ? null : [a];
   }
   const min = Math.min(a, b);
   const max = Math.max(a, b);
 
-  return [min, ...sqInRect(max - min, min, false)];
-}
+  return [min, ...sqInRect3(max - min, min, false)];
+};
 
 // Practicing
-function sqInRectZ() {
+const sqInRectZ = (length, width) => {
   return 1;
-}
+};
 
 module.exports = sqInRect;

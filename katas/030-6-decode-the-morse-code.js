@@ -86,4 +86,4 @@ const decodeMorseZ = morse => {
   return 1;
 };
 
-module.exports = decodeMorse2;
+module.exports = decodeMorse;

@@ -78,4 +78,4 @@ const bouncingBallZ = (h, bounce, window) => {
   return 1;
 };
 
-module.exports = bouncingBallZ;
+module.exports = bouncingBall;

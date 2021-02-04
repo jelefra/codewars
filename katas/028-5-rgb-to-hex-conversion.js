@@ -69,4 +69,4 @@ const rgbZ = (r, g, b) => {
   return toHexZ(r) + toHexZ(g) + toHexZ(b);
 };
 
-module.exports = rgb4;
+module.exports = rgb;

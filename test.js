@@ -88,7 +88,7 @@ const high = require("./katas/087-6-highest-scoring-word");
 const bouncingBall = require("./katas/088-6-bouncing-balls");
 const isPrime = require("./katas/089-6-is-a-number-prime");
 const sqInRect = require("./katas/090-6-rectangle-into-squares");
-const romanToArabic = require("./katas/091-6-roman-numerals-decoder");
+const romanDecoder = require("./katas/091-6-roman-numerals-decoder");
 const snail = require("./katas/092-4-snail");
 const diamond = require("./katas/093-6-give-me-a-diamond");
 const race = require("./katas/094-6-tortoise-racing");
@@ -1238,11 +1238,24 @@ describe("Test all kata solutions", () => {
   });
 
   it("091", () => {
-    expect(romanToArabic("XXI")).toEqual(21);
-    expect(romanToArabic("I")).toEqual(1);
-    expect(romanToArabic("IV")).toEqual(4);
-    expect(romanToArabic("MMVIII")).toEqual(2008);
-    expect(romanToArabic("MDCLXVI")).toEqual(1666);
+    expect(romanDecoder("I")).toEqual(1);
+    expect(romanDecoder("II")).toEqual(2);
+    expect(romanDecoder("III")).toEqual(3);
+    expect(romanDecoder("IV")).toEqual(4);
+    expect(romanDecoder("VI")).toEqual(6);
+    expect(romanDecoder("IX")).toEqual(9);
+    expect(romanDecoder("XI")).toEqual(11);
+    expect(romanDecoder("XL")).toEqual(40);
+    expect(romanDecoder("LX")).toEqual(60);
+    expect(romanDecoder("XC")).toEqual(90);
+    expect(romanDecoder("CX")).toEqual(110);
+    expect(romanDecoder("CD")).toEqual(400);
+    expect(romanDecoder("DC")).toEqual(600);
+    expect(romanDecoder("CM")).toEqual(900);
+    expect(romanDecoder("MC")).toEqual(1100);
+    expect(romanDecoder("XXI")).toEqual(21);
+    expect(romanDecoder("MDCLXVI")).toEqual(1666);
+    expect(romanDecoder("MMVIII")).toEqual(2008);
   });
 
   it("092", () => {

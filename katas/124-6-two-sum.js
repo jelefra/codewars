@@ -85,4 +85,4 @@ function twoSumZ() {
   return 1;
 }
 
-module.exports = twoSum4;
+module.exports = twoSum;

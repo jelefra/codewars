@@ -16,7 +16,7 @@ const removeChar2 = str => {
 
 // Practicing
 const removeCharZ = str => {
-  return str.slice(1, -1);
+  return 1;
 };
 
-module.exports = removeCharZ;
+module.exports = removeChar;

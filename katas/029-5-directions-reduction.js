@@ -90,4 +90,4 @@ const dirReducZ = arr => {
   return 1;
 };
 
-module.exports = dirReduc3;
+module.exports = dirReduc;

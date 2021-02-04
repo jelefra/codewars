@@ -5,11 +5,6 @@ Create a function that takes a Roman numeral as its argument and returns its val
 
 Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, starting with the leftmost digit and skipping any 0s. So 1990 is rendered "MCMXC" (1000 = M, 900 = CM, 90 = XC) and 2008 is rendered "MMVIII" (2000 = MM, 8 = VIII). The Roman numeral for 1666, "MDCLXVI", uses each letter in descending order.
 
-Example:
-
-solution('XXI'); // should return 21
-Help:
-
 Symbol    Value
 I          1
 V          5
@@ -21,7 +16,7 @@ M          1,000
 */
 
 // Submission
-function romanToArabic(roman) {
+function romanDecoder(roman) {
   const values = {
     M: 1000,
     D: 500,
@@ -42,7 +37,7 @@ function romanToArabic(roman) {
 }
 
 // Inspiration
-function romanToArabic2(roman) {
+const romanDecoder2 = roman => {
   const conversion = {
     M: 1000,
     CM: 900,
@@ -62,11 +57,11 @@ function romanToArabic2(roman) {
   return roman
     .match(/CM|CD|XC|XL|IX|IV|\w/g)
     .reduce((accum, roman) => accum + conversion[roman], 0);
-}
+};
 
 // Practicing
-function romanToArabicZ() {
+const romanDecoderZ = roman => {
   return 1;
-}
+};
 
-module.exports = romanToArabic;
+module.exports = romanDecoder;

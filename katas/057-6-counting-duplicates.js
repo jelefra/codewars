@@ -73,11 +73,7 @@ const duplicateCount5 = text => {
 
 // Practicing
 const duplicateCountZ = words => {
-  const dict = {};
-  [...words.toLowerCase()].forEach(character =>
-    dict[character] ? dict[character]++ : (dict[character] = 1)
-  );
-  return Object.values(dict).filter(count => count > 1).length;
+  return 1;
 };
 
 module.exports = duplicateCount;
