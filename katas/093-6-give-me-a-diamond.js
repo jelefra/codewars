@@ -7,7 +7,7 @@ You need to return a string that displays a diamond shape on the screen using as
 
 The shape that will be returned from print method resembles a diamond, where the number provided as input represents the number of *’s printed on the middle line. The line above and below will be centered and will have 2 less *’s than the middle line. This reduction by 2 *’s for each line continues until a line with a single * is printed at the top and bottom of the figure.
 
-Return null if input is even number or negative (as it is not possible to print diamond with even number or negative number).
+Return null if the input is either an even or negative number (as it is not possible to print diamond with even number or negative number).
 */
 
 // Submission
@@ -28,8 +28,8 @@ function diamond(n) {
 }
 
 // Inspiration
-function diamond2(n) {
-  if (n % 2 == 0 || n < 1) return null;
+const diamond2 = n => {
+  if (n % 2 === 0 || n < 0) return null;
   let x = 0;
   let add;
   let diam = line(x, n);
@@ -38,31 +38,27 @@ function diamond2(n) {
     diam = add + diam + add;
   }
   return diam;
-}
+};
 
-function line(spaces, stars) {
+const line = (spaces, stars) => {
   return `${" ".repeat(spaces) + "*".repeat(stars)}\n`;
-}
+};
 
-function diamond3(n) {
-  if (n < 0 || !(n % 2)) return null;
-  const middleIndex = Math.floor(n / 2);
-
-  return `${Array.apply(null, { length: n })
-    .map((el, index) => {
-      const indentation = Math.abs(index - middleIndex);
-      const numberOfAsterisks = n - indentation * 2;
-      return (
-        Array(indentation + 1).join(" ") +
-        Array(numberOfAsterisks + 1).join("*")
-      );
-    })
-    .join("\n")}\n`;
-}
+const diamond3 = n => {
+  if (n % 2 === 0 || n < 0) return null;
+  let str = "";
+  for (let i = 0; i < n; i++) {
+    const spaces = Math.abs((n - 2 * i - 1) / 2);
+    str += " ".repeat(spaces);
+    str += "*".repeat(n - 2 * spaces);
+    str += "\n";
+  }
+  return str;
+};
 
 // Practicing
-function diamondZ() {
+const diamondZ = n => {
   return 1;
-}
+};
 
 module.exports = diamond;

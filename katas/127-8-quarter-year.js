@@ -6,8 +6,10 @@ Given a month as an integer from 1 to 12, return to which quarter of the year it
 For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
 */
 
-// Submission and best practice
-const quarterOf = month => Math.ceil(month / 3);
+// Submission
+const quarterOf = month => {
+  return Math.ceil(month / 3);
+};
 
 // Practicing
 const quarterOfZ = month => {

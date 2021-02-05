@@ -7,13 +7,13 @@ Example
 solution("camelCasing")  ==  "camel Casing"
 */
 
-// Submission and best practice
+// Submission
 const breakCamelCase = string => {
   return string.replace(/([A-Z])/g, " $1");
 };
 
 // Practicing
-const breakCamelCaseZ = month => {
+const breakCamelCaseZ = string => {
   return 1;
 };
 

@@ -117,7 +117,7 @@ const ticker = require("./katas/116-6-ticket");
 const blocks = require("./katas/117-6-return-string-as-sorted-blocks");
 const stockList = require("./katas/118-6-help-the-bookseller");
 const strongestEven = require("./katas/119-6-strongest-even-number-in-an-interval");
-const thirt = require("./katas/120-6-a-rule-of-divisibility-by-13");
+const thirteen = require("./katas/120-6-a-rule-of-divisibility-by-13");
 const count = require("./katas/121-6-count-characters-in-your-string");
 const streetFighterSelection = require("./katas/122-6-street-fighter-2-character-selection");
 const foldArray = require("./katas/123-6-fold-an-array");
@@ -1762,12 +1762,12 @@ describe("Test all kata solutions", () => {
   });
 
   it("120", () => {
-    expect(thirt(1234567)).toEqual(87);
-    expect(thirt(8529)).toEqual(79);
-    expect(thirt(85299258)).toEqual(31);
-    expect(thirt(5634)).toEqual(57);
-    expect(thirt(1111111111)).toEqual(71);
-    expect(thirt(987654321)).toEqual(30);
+    expect(thirteen(1234567)).toEqual(87);
+    expect(thirteen(8529)).toEqual(79);
+    expect(thirteen(85299258)).toEqual(31);
+    expect(thirteen(5634)).toEqual(57);
+    expect(thirteen(1111111111)).toEqual(71);
+    expect(thirteen(987654321)).toEqual(30);
   });
 
   it("121", () => {
@@ -1904,6 +1904,7 @@ describe("Test all kata solutions", () => {
   it("128", () => {
     expect(breakCamelCase("camelCasing")).toEqual("camel Casing");
     expect(breakCamelCase("longerCamelCasing")).toEqual("longer Camel Casing");
+    expect(breakCamelCase("otherTestString")).toEqual("other Test String");
   });
 
   it("129", () => {

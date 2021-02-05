@@ -1,21 +1,17 @@
 /*
 https://www.codewars.com/kata/fold-an-array/train/javascript
 
-In this kata you have to write a method that folds a given array of integers by the middle x-times.
-
-An example says more than thousand words:
+Write a method that folds a given array of integers by the middle x-times.
 
 Fold 1-time:
 [1,2,3,4,5] -> [6,6,3]
 
-A little visualization (NOT for the algorithm but for the idea of folding):
+Visualization:
 
- Step 1         Step 2        Step 3       Step 4       Step5
                      5/           5|         5\
                     4/            4|          4\
 1 2 3 4 5      1 2 3/         1 2 3|       1 2 3\       6 6 3
 ----*----      ----*          ----*        ----*        ----*
-
 
 Fold 2-times:
 [1,2,3,4,5] -> [9,6]
@@ -27,7 +23,6 @@ The array will always contain numbers and will never be null. The parameter "run
 If an array with one element is folded, it stays the same array.
 
 The input array should not be modified!
-
 */
 
 // Submission
@@ -46,27 +41,16 @@ function foldArray(array, runs) {
 }
 
 // Inspiration
-function foldArray2(a, n) {
-  const r = [], c = a.slice();
-  while (c.length) r.push(c.pop() + (c.shift() || 0));
-  return n - 1 ? foldArray(r, n - 1) : r;
-}
-
-function foldArray3(array, runs) {
-  if (!runs) return array;
-
-  var result = [];
-  // new Array
-  for (var i = 0; i < Math.ceil(array.length / 2); i++) {
-    result[i] = array.length -i - 1 === i ? array[i] : array[i] + array[array.length - i - 1];
-  }
-
-  return foldArray(result, runs - 1);
-}
+const foldArray2 = (array, runs) => {
+  const result = [];
+  const copy = array.slice();
+  while (copy.length) result.push(copy.pop() + (copy.shift() || 0));
+  return runs - 1 ? foldArray(result, runs - 1) : result;
+};
 
 // Practicing
-function foldArrayZ() {
+const foldArrayZ = (array, runs) => {
   return 1;
-}
+};
 
 module.exports = foldArray;

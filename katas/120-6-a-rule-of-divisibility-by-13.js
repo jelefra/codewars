@@ -21,23 +21,24 @@ and again with 87:
 
 From now on the sequence is stationary and the remainder of 1234567 by 13 is the same as the remainder of 87 by 13: 9
 
-Call thirt the function which processes this sequence of operations on an integer n (>=0). thirt will return the stationary number.
+Call thirteen the function which processes this sequence of operations on an integer n (>=0). thirteen will return the stationary number.
 
-thirt(1234567) calculates 178, then 87, then 87 and returns 87.
-thirt(321) calculates 48, then 48 and returns 48.
+thirteen(1234567) calculates 178, then 87, then 87 and returns 87.
+thirteen(321) calculates 48, then 48 and returns 48.
 */
 
 // Submission
 const sequence = [1, 10, 9, 12, 3, 4];
 
-const operator = n =>
-  String(n)
+const operator = n => {
+  return String(n)
     .split("")
     .reverse()
     .map((digit, index) => Number(digit) * sequence[index % 6])
     .reduce((sum, digitMultiplied) => (sum += digitMultiplied), 0);
+};
 
-function thirt(n) {
+function thirteen(n) {
   let latestOperatorResult = "";
   while (true) {
     const operationResult = operator(n);
@@ -51,26 +52,17 @@ function thirt(n) {
 }
 
 // Inspiration
-function thirt2(n) {
-  const nums = [1, 10, 9, 12, 3, 4];
-  var sum = ('' + n).split('').reverse().reduce((sum, v, i) => sum + v * nums[i % nums.length], 0);
-  return sum === n ? n : thirt(sum);
-}
-
-function thirt3(n) {
-  const sum = String(n)
+const thirteen2 = n => {
+  const sum = `${n}`
     .split("")
     .reverse()
-    .reduce(
-      (sum, value, index) => sum + Number(value) * sequence[index % 6],
-      0
-    );
-  return sum === n ? sum : thirt3(sum);
-}
+    .reduce((sum, v, i) => sum + v * sequence[i % sequence.length], 0);
+  return sum === n ? n : thirteen2(sum);
+};
 
 // Practicing
-function thirtZ(n) {
+const thirteenZ = n => {
   return 1;
-}
+};
 
-module.exports = thirt;
+module.exports = thirteen;
