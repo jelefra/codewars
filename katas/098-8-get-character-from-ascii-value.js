@@ -14,8 +14,8 @@ function getChar(c) {
 }
 
 // Practicing
-function getCharZ(c) {
-  return 1;
-}
+const getCharZ = c => {
+  return String.fromCharCode(c);
+};
 
 module.exports = getChar;

@@ -1362,12 +1362,16 @@ describe("Test all kata solutions", () => {
   });
 
   it("094", () => {
+    expect(race(10, 20, 50)).toEqual([5, 0, 0]);
+    expect(race(20, 24, 10)).toEqual([2, 30, 0]);
     expect(race(720, 850, 70)).toEqual([0, 32, 18]);
     expect(race(80, 91, 37)).toEqual([3, 21, 49]);
     expect(race(80, 100, 40)).toEqual([2, 0, 0]);
   });
 
   it("095", () => {
+    expect(isPangram("abcdefghijklmnopqrstuvwxyz")).toEqual(true);
+    expect(isPangram("Abcdefghijklmnopqrstuvwxyz")).toEqual(true);
     expect(isPangram("The quick brown fox jumps over the lazy dog.")).toEqual(
       true
     );
@@ -1419,6 +1423,7 @@ describe("Test all kata solutions", () => {
     expect(calc("1 3 *")).toEqual(3); // "Should support multiplication"
     expect(calc("1 3 -")).toEqual(-2); // "Should support subtraction"
     expect(calc("4 2 /")).toEqual(2); // "Should support division"
+    expect(calc("5 1 2 + 4 * + 3 -")).toEqual(14);
   });
 
   it("100", () => {

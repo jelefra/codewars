@@ -27,13 +27,20 @@ function isValidIP(str) {
 }
 
 // Inspiration
-function isValidIP2(str) {
+const isValidIP2 = str => {
   return /^(([1-9]?\d|1\d\d|2[0-4]\d|25[0-5])(\.(?!$)|$)){4}$/.test(str);
-}
+};
+
+const isValidIP3 = str => {
+  return (
+    str.split(".").filter(v => v === Number(v).toString() && Number(v) < 256)
+      .length === 4
+  );
+};
 
 // Practicing;
-function isValidIPZ() {
+const isValidIPZ = str => {
   return 1;
-}
+};
 
 module.exports = isValidIP;

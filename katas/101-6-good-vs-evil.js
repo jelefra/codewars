@@ -65,12 +65,11 @@ function goodVsEvil(good, evil) {
 }
 
 // Inspiration
-function goodVsEvil2(good, evil) {
-  const getWorth = function(side, worth) {
-    return side.split(" ").reduce(function(result, value, index) {
-      return result + worth[index] * value;
-    }, 0);
-  };
+const goodVsEvil2 = (good, evil) => {
+  const getWorth = (side, worth) =>
+    side
+      .split(" ")
+      .reduce((result, value, index) => result + worth[index] * value, 0);
 
   const result =
     getWorth(good, [1, 2, 3, 3, 4, 10]) -
@@ -81,11 +80,20 @@ function goodVsEvil2(good, evil) {
     : result < 0
     ? "Battle Result: Evil eradicates all trace of Good"
     : "Battle Result: No victor on this battle field";
-}
+};
 
 // Practicing
-function goodVsEvilZ() {
+const calculate = (army, unitStrengths) => {
+  return army
+    .split(" ")
+    .reduce(
+      (total, current, index) => total + Number(current) * unitStrengths[index],
+      0
+    );
+};
+
+const goodVsEvilZ = (good, evil) => {
   return 1;
-}
+};
 
 module.exports = goodVsEvil;

@@ -17,8 +17,8 @@ function setAlarm(employed, vacation) {
 }
 
 // Practicing
-function setAlarmZ(employed, vacation) {
+const setAlarmZ = (employed, vacation) => {
   return 1;
-}
+};
 
 module.exports = setAlarm;
