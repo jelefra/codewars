@@ -129,6 +129,7 @@ const breakCamelCase = require("./katas/128-6-break-camel-case");
 const nbMonths = require("./katas/129-6-buying-a-car");
 const partsSums = require("./katas/130-6-sum-of-parts");
 const meeting = require("./katas/131-6-meeting");
+const mazeRunner = require("./katas/132-6-maze-runners");
 
 describe("Test all kata solutions", () => {
   it("001", () => {
@@ -1983,4 +1984,113 @@ describe("Test all kata solutions", () => {
       "(ARNO, ALEX)(ARNO, HALEY)(BELL, SARAH)(CORNWELL, ALISSA)(DORNY, PAUL)(DORRIES, ANDREW)(KERN, ANN)(KERN, MADISON)"
     );
   });
+
+  it("132", () => {
+    const maze = [
+      [1, 1, 1, 1, 1, 1, 1],
+      [1, 0, 0, 0, 0, 0, 3],
+      [1, 0, 1, 0, 1, 0, 1],
+      [0, 0, 1, 0, 0, 0, 1],
+      [1, 0, 1, 0, 1, 0, 1],
+      [1, 0, 0, 0, 0, 0, 1],
+      [1, 2, 1, 0, 1, 0, 1]
+    ];
+    expect(
+      mazeRunner(maze, ["N", "N", "N", "N", "N", "E", "E", "E", "E", "E"])
+    ).toEqual("Finish");
+    expect(
+      mazeRunner(maze, [
+        "N",
+        "N",
+        "N",
+        "N",
+        "N",
+        "E",
+        "E",
+        "S",
+        "S",
+        "E",
+        "E",
+        "N",
+        "N",
+        "E"
+      ])
+    ).toEqual("Finish");
+    expect(
+      mazeRunner(maze, [
+        "N",
+        "N",
+        "N",
+        "N",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "W",
+        "W"
+      ])
+    ).toEqual("Finish");
+    expect(mazeRunner(maze, ["N", "N", "N", "W", "W"])).toEqual("Dead");
+    expect(
+      mazeRunner(maze, [
+        "N",
+        "N",
+        "N",
+        "N",
+        "N",
+        "E",
+        "E",
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "S"
+      ])
+    ).toEqual("Dead");
+    expect(mazeRunner(maze, ["N", "E", "E", "E", "E"])).toEqual("Lost");
+  });
+
+  expect(
+    mazeRunner(
+      [
+        [1, 1, 1],
+        [1, 1, 1],
+        [2, 1, 1]
+      ],
+      ["S"]
+    )
+  ).toEqual("Dead");
+  expect(
+    mazeRunner(
+      [
+        [1, 1, 1],
+        [1, 1, 1],
+        [2, 1, 1]
+      ],
+      ["W"]
+    )
+  ).toEqual("Dead");
+  expect(
+    mazeRunner(
+      [
+        [1, 1, 2],
+        [1, 1, 1],
+        [1, 1, 1]
+      ],
+      ["N"]
+    )
+  ).toEqual("Dead");
+  expect(
+    mazeRunner(
+      [
+        [1, 1, 2],
+        [1, 1, 1],
+        [1, 1, 1]
+      ],
+      ["E"]
+    )
+  ).toEqual("Dead");
 });
