@@ -1485,6 +1485,13 @@ describe("Test all kata solutions", () => {
     expect(convert("1010", bin, dec)).toEqual("10");
     expect(convert("1010", bin, hex)).toEqual("a");
     expect(convert("0", dec, alpha)).toEqual("a");
+    expect(convert("51", dec, alpha)).toEqual("Z");
+    expect(convert("52", dec, alpha)).toEqual("ba");
+    expect(convert("53", dec, alpha)).toEqual("bb");
+    expect(convert("103", dec, alpha)).toEqual("bZ");
+    expect(convert("104", dec, alpha)).toEqual("ca");
+    expect(convert("105", dec, alpha)).toEqual("cb");
+    expect(convert("1000", dec, alpha)).toEqual("tm");
     expect(convert("27", dec, allow)).toEqual("bb");
     expect(convert("hello", allow, hex)).toEqual("320048");
     expect(convert("SAME", alup, alup)).toEqual("SAME");

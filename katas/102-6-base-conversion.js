@@ -3,7 +3,7 @@ https://www.codewars.com/kata/base-conversion/train/javascript
 
 In this kata you have to implement a base converter, which converts positive integers between arbitrary bases / alphabets. Here are some pre-defined alphabets:
 
-var Alphabet = {
+const Alphabet = {
   BINARY:        '01',
   OCTAL:         '01234567',
   DECIMAL:       '0123456789',
@@ -16,9 +16,9 @@ var Alphabet = {
 The function convert() should take an input (string), the source alphabet (string) and the target alphabet (string). You can assume that the input value always consists of characters from the source alphabet. You don't need to validate it.
 
 Additional Notes:
-The maximum input value can always be encoded in a number without loss of precision in JavaScript. In Haskell, intermediate results will probably be too large for Int.
-The function must work for any arbitrary alphabets, not only the pre-defined ones
-You don't have to consider negative numbers
+The maximum input value can always be encoded in a number without loss of precision in JavaScript.
+The function must work for any arbitrary alphabets, not only the pre-defined ones.
+You don't have to consider negative numbers.
 */
 
 const Alphabet = {
@@ -66,24 +66,24 @@ function convert(input, source, target) {
 }
 
 // Inspiration
-function convert2(input, source, target) {
+const convert2 = (input, source, target) => {
   const inBase = source.length;
   const len = input.length;
-  const value = input.split("").reduce(function(p, v, i) {
-    return p + source.indexOf(v) * Math.pow(inBase, len - i - 1);
-  }, 0);
+  const value = input
+    .split("")
+    .reduce((p, v, i) => p + source.indexOf(v) * inBase ** (len - i - 1), 0);
   return toBase(value, target);
-}
+};
 
-function toBase(value, target) {
+const toBase = (value, target) => {
   const base = target.length;
   if (value < base) return `${target.charAt(value)}`;
   return toBase(Math.floor(value / base), target) + target.charAt(value % base);
-}
+};
 
 // Practicing
-function convertZ(input, source, target) {
+const convertZ = (input, source, target) => {
   return 1;
-}
+};
 
 module.exports = convert;
