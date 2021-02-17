@@ -22,11 +22,9 @@ function toWeirdCase(str) {
     .join(" ");
 }
 
-// Inspiration
-
 // Practicing
-function toWeirdCaseZ() {
+const toWeirdCaseZ = str => {
   return 1;
-}
+};
 
 module.exports = toWeirdCase;

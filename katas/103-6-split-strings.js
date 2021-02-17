@@ -21,17 +21,17 @@ function solution(str) {
 }
 
 // Inspiration
-function solution2(str) {
-  return (str.length % 2 ? `${str}_` : str).match(/../g);
-}
-
-function solution3(str) {
+const solution2 = str => {
   return `${str}_`.match(/../g);
-}
+};
+
+const solution3 = str => {
+  return (str.length % 2 ? `${str}_` : str).match(/../g);
+};
 
 // Practicing
-function solutionZ() {
+const solutionZ = str => {
   return 1;
-}
+};
 
 module.exports = solution;
